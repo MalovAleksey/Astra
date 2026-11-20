@@ -6,12 +6,13 @@
 ```bash
 apt update
 apt install -y ansible
-
+```
+```bash
 mkdir -p /etc/ansible
 ansible-config init --disabled > /etc/ansible/ansible.cfg
-
+```
 **/etc/ansible/ansible.cfg**
-
+```bash
 [defaults]
 inventory = /etc/ansible/hosts
 host_key_checking = False
@@ -32,15 +33,19 @@ pipelining = True
 ```bash
 wget https://github.com/semaphoreui/semaphore/releases/download/v2.20.23/semaphore_2.20.23_linux_amd64.deb
 apt install ./semaphore_2.20.23_linux_amd64.deb
+```
 
+```bash
 #Подготовка директорий и пользователя
 useradd --system --create-home --home-dir /var/lib/semaphore --shell /usr/sbin/nologin semaphore
 mkdir -p /etc/semaphore /var/lib/semaphore/playbooks
 chown -R semaphore:semaphore /etc/semaphore /var/lib/semaphore
-
+```
+```bash
 #Первоначальная настройка (semaphore setup)
 sudo -u semaphore semaphore setup --config /etc/semaphore/config.json
-
+```
+```bash
 #What database to use:
 4
 
@@ -59,9 +64,10 @@ Enable slack alerts? (yes/no) (default no):
 Enable Rocket.Chat alerts? (yes/no) (default no):
 Enable Microsoft Team Channel alerts? (yes/no) (default no):
 Enable LDAP authentication? (yes/no) (default no):
-
+```
 #Создание службы systemd для автозапуска
 
+```bash
 tee /etc/systemd/system/semaphore.service > /dev/null <<EOF
 [Unit]
 Description=Semaphore UI (Ansible Web UI)
@@ -80,14 +86,16 @@ RestartSec=10s
 [Install]
 WantedBy=multi-user.target
 EOF
-
+```
+```bash
 systemctl daemon-reload
 systemctl enable --now semaphore
 systemctl status semaphore
-
+```
 #Файл настроек
 nano /etc/semaphore/config.json
 
+```bash
 #Смена пароля администратора при необходимости
 sudo -u semaphore semaphore user add \
   --config /etc/semaphore/config.json \
