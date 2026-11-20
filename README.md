@@ -5,7 +5,7 @@
 
 ```bash
 apt update
-apt install -y ansible
+apt install -y ansible sshpass
 ```
 ```bash
 mkdir -p /etc/ansible
