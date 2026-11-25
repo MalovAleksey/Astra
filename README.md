@@ -112,9 +112,9 @@ sudo -u semaphore semaphore user add \
 Подготовка пакетов
 
 ```bash
-apt install astra-full-upgrade fly-notifications fly-update-notifier-major -y \
-apt policy astra-full-upgrade \
-astra-full-upgrade self-upgrade \
+apt install astra-full-upgrade fly-notifications fly-update-notifier-major -y
+apt policy astra-full-upgrade
+astra-full-upgrade self-upgrade
 apt policy astra-full-upgrade
 ```
 
