@@ -124,6 +124,10 @@ apt policy astra-full-upgrade
 nano /usr/lib/python3/dist-packages/astra_upgrade/configs/upgrade.conf.yaml
 
 ```
+или 
+```bash
+nano /etc/astra-upgrade/configs/upgrade.conf.yaml
+```
 ```bash
 nesting_upgrade: true
 ```
