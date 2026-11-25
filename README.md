@@ -131,7 +131,9 @@ nano /etc/astra-upgrade/configs/upgrade.conf.yaml
 ```bash
 nesting_upgrade: true
 ```
-
+```bash
+check_gpg: false
+```
 Выполняем проверку
 
 ```bash
