@@ -109,12 +109,23 @@ sudo -u semaphore semaphore user add \
 
 ## Обновление Astra Linux Desktop с 1.7 до 1.8
 
+Подготовка пакетов
 
 ```bash
 apt install astra-full-upgrade fly-notifications fly-update-notifier-major -y \
 apt policy astra-full-upgrade \
 astra-full-upgrade self-upgrade \
 apt policy astra-full-upgrade
+```
+
+Редактируем файл, при необходимости меняем репозитории.
+
+```bash
+nano /usr/lib/python3/dist-packages/astra_upgrade/configs/upgrade.conf.yaml
+
+```
+```bash
+nesting_upgrade: true
 ```
 
 
