@@ -128,7 +128,22 @@ nano /usr/lib/python3/dist-packages/astra_upgrade/configs/upgrade.conf.yaml
 nesting_upgrade: true
 ```
 
+Выполняем проверку
 
+```bash
+astra-full-upgrade check
+```
+
+Запускаем обновление
+
+```bash
+astra-full-upgrade enable
+```
+или
+
+```bash
+astra-full-upgrade force
+```
 
 
 
