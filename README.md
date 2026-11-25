@@ -1,5 +1,5 @@
 # Astra
-##Ansible
+## Ansible
 
 **Первоначальная настройка**
 
@@ -106,6 +106,34 @@ sudo -u semaphore semaphore user add \
   --password 'ВашНовыйПароль123!'
 
 ```
+
+## Обновление Astra Linux Desktop с 1.7 до 1.8
+
+
+```bash
+apt install astra-full-upgrade fly-notifications fly-update-notifier-major -y \
+apt policy astra-full-upgrade \
+astra-full-upgrade self-upgrade \
+apt policy astra-full-upgrade
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
