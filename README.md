@@ -158,6 +158,39 @@ astra-full-upgrade force
  rsync --delete -avLz --info=progress2 dl.astralinux.ru::astra/astra/stable/2.12_x86-64/repository/ /srv/repo/alce
 ```
 
+```bash
+echo "deb file:///srv/repo/alce stable main contrib non-free" >>  /etc/apt/sources.list
+```
+
+```bash
+ apt install apt-mirror python3 parsec-tests ufw xfsprogs lsb-release
+```
+
+```bash
+cat << 'EOF' > /etc/apt/mirror.list
+set base_path    /srv/repo/alse17
+set nthreads     10
+set _tilde 0
+
+deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-main/ 1.7_x86-64 main contrib non-free
+deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-base/ 1.7_x86-64 main contrib non-free
+deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-extended/ 1.7_x86-64 main contrib non-free
+EOF
+```
+
+```bash
+apt-mirror
+ls -la /srv/repo/alse17/
+du -h /srv/repo/alse17/
+```
+
+```bash
+cat << 'EOF' > /etc/apt/sources.list
+deb file:///srv/repo/alse17/mirror/dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-main 1.7_x86-64 main contrib non-free
+deb file:///srv/repo/alse17/mirror/dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-base 1.7_x86-64 main contrib non-free
+deb file:///srv/repo/alse17/mirror/dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.11/repository-extended 1.7_x86-64 main contrib non-free
+EOF
+```
 
 
 
