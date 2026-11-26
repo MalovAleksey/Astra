@@ -155,7 +155,7 @@ astra-full-upgrade force
 ## Локальные репозитории
 
 ```bash
- rsync --delete -avLz --info=progress2 dl.astralinux.ru::astra/astra/stable/2.12_x86-64/repositor  y/ /srv/repo/alce
+ rsync --delete -avLz --info=progress2 dl.astralinux.ru::astra/astra/stable/2.12_x86-64/repository/ /srv/repo/alce
 ```
 
 
